@@ -9,7 +9,8 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\NoteController;
-
+use App\Http\Controllers\ExportController;
+use App\Http\Controllers\KaulkulatorsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -76,7 +77,13 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
 Route::group(['middleware' => ['auth']], function() {
     Route::Resource('dienasgramata', NoteController::class);
     Route::delete('/dienasgramata/{id}', 'NoteController@destroy')->name('dienasgramata.destroy');
+    Route::get('/kaulkulators',[KaulkulatorsController::class, 'index'])->name('kaulkulators.index');
 });
+
+//pdf faili pa laikiem- 3, 7, un 30 dienas
+Route::get('/export', [ExportController::class, 'exportToPDF'])->name('pdf.export');
+
+
 
 
 

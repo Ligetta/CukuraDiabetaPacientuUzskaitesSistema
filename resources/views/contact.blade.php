@@ -4,7 +4,7 @@
     <!-- main -->
     <main class="container">
       <section id="contact-us">
-        <h1>Get in Touch!</h1>
+        <h1>Sazinies ar mani!</h1>
 
         <!-- contact info -->
         <div class="container">
@@ -12,27 +12,27 @@
             <div class="specific-info">
               <i class="fas fa-home"></i>
               <div>
-                <p class="title">4th floor, Hi Center</p>
-                <p class="subtitle">Moi Avenue</p>
+                <p class="title">Trešais stāvs, VEF offiss</p>
+                <p class="subtitle">Rīga</p>
               </div>
             </div>
             <div class="specific-info">
               <i class="fas fa-phone-alt"></i>
               <div>
-                <a href="">+254 720 XXX XXX </a>
+                <a href="">+371 223 111 456 </a>
                 <br />
-                <a href="">+254 721 XXX XXX</a>
+                <a href="">+371 223 111 456</a>
 
-                <p class="subtitle">Mon to Fri 9am-6pm</p>
+                <p class="subtitle">Pirmdienas līdz Piekdienas 9:00 - 18:00</p>
               </div>
             </div>
             <div class="specific-info">
               <i class="fas fa-envelope-open-text"></i>
               <div>
                 <a href="mailto:info@alphayo.co.ke">
-                  <p class="title">info@alphayo.co.ke</p>
+                  <p class="title">cukuradienasgramata@gmail.com</p>
                 </a>
-                <p class="subtitle">Send us your query anytime!</p>
+                <p class="subtitle">Rakstiet mums jebkurā laikā!</p>
               </div>
             </div>
           </div>
@@ -41,23 +41,23 @@
           <div class="contact-form">
             <form action="" method="">
               <!-- Name -->
-              <label for="name"><span>Name</span></label>
+              <label for="name"><span>Vārds</span></label>
               <input type="text" id="name" name="name" value="" />
 
               <!-- Email -->
-              <label for="email"><span>Email</span></label>
+              <label for="email"><span>E-pasts</span></label>
               <input type="text" id="email" name="email" value="" />
 
               <!-- Subject -->
-              <label for="subject"><span>Subject</span></label>
+              <label for="subject"><span>Galvenā doma</span></label>
               <input type="text" id="Subject" name="subject" value="" />
 
               <!-- Message -->
-              <label for="message"><span>Message</span></label>
+              <label for="message"><span>Vēstule</span></label>
               <textarea id="message" name="message"></textarea>
 
                <!-- Button -->
-              <input type="submit" value="Submit" />
+              <input type="submit" value="Sūtīt" />
             </form>
           </div>
         </div>

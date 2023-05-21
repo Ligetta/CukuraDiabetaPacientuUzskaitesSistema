@@ -114,7 +114,11 @@
     <h1 class="title">Cukura dienasgrāmatas ieraksti</h1>
     <li>
         <a href="{{route('dienasgramata.create')}}" class="btn btn-green">Izveidot jaunu ierakstu</a>
-        <a href="{{route('dienasgramata.index')}}" class="btn btn-danger">Izprintēt PDF</a>
+    </li>
+    <li style="margin-top:20px;">
+        <a class="btn btn-danger" href="{{ route('pdf.export', ['type' => '3days']) }}">PDF priekš 3 dienām</a>
+        <a class="btn btn-danger" href="{{ route('pdf.export', ['type' => 'week']) }}">PDF nedēļai</a>
+        <a class="btn btn-danger" href="{{ route('pdf.export', ['type' => 'month']) }}">PDF mēnesim</a>
     </li>
     <p class="padding"></p>
     <div class="table-responsive">

@@ -53,6 +53,12 @@
 
             <li>
               <div class="text-end">
+                <a href="{{ route('kaulkulators.index')}}" >Kaulkulators</a>
+              </div>
+            </li> 
+
+            <li>
+              <div class="text-end">
                 <a href="{{ route('logout.perform') }}" style=" text-decoration: underline;">Izziet</a>
               </div>
             </li>  

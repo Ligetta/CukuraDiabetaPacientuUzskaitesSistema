@@ -29,10 +29,10 @@ img {
 /*login page container*/
 .container-login {
   background: linear-gradient(black,  #DCD0FF);
-  width:50%; 
+  width:60%; 
   height: 85vh;
   position: relative;
-  margin-left: 45vh;
+  margin-left: 35vh;
   margin-top: 30px;
   border-radius: 30px;
 }
@@ -51,15 +51,27 @@ img {
   color: black;
   text-align: center;
   position: relative;
+  align-items: center;
   top: -60vh;
 }
 
 .register-button {
   color: black;
   text-align: center;
-  position: absolute;
-  top: 90%;
-  left: -2%;
+  position: relative;
+  align-items: center;
+  top: -60vh;
+  right:3%;
+}
+
+.container-register {
+  background: linear-gradient(black,  #DCD0FF);
+  width:50%; 
+  height: 95vh;
+  position: relative;
+  margin-left: 45vh;
+  margin-top: 30px;
+  border-radius: 30px;
 }
 
 /*danger-signs*/

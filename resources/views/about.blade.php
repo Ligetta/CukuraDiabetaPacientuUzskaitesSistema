@@ -11,20 +11,18 @@
 
         <div>
           <p class="about-text">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam, ut
-            tempore repellat molestias a distinctio fuga molestiae eaque
-            laborum vero eos, maiores fugit culpa porro delectus aliquam
-            adipisci nisi voluptas sequi odit, numquam architecto officia?
-            Corrupti recusandae beatae sint quasi iste libero maiores commodi
-            odio molestias vel fugit, omnis nobis consectetur harum veritatis
-            necessitatibus asperiores officiis. Dolores nemo voluptates.
+            Sveiki! Esmu cetrutā kursa studente kura drīz pabeigs programmētājas profesiju un
+            kas slimo ar cukura diabētu jau 6 gadus. Savas dzīves laikā esmu
+            secinājusi, ka nav nevienas mājaslapas, kas digitalizētu cukura diabēta dienasgrāmatu, kuras rakstītšanas 
+            process ir ilgs un ,manuprāt, mokošs.
             <br /><br />
-            Adipisicing elit. Illum reprehenderit sapiente at ab amet, nobis
-            porro pariatur similique dicta nisi velit fugiat reiciendis, quos
-            fuga nemo aliquam aspernatur est vel. Lorem ipsum dolor sit amet
-            consectetur, adipisicing elit. Omnis non ad veritatis. Lorem ipsum
-            dolor sit amet consectetur, adipisicing elit. Lorem ipsum dolor
-            sit.
+            Tādēļ es radīju šo mājaslapu priekš cilvēkiem kā mēs, kur varēs apstīties interesantus rakstus
+            un radīt savu cukura dienasgrāmatu un to ērti izmantot elektroniskajā vidē, kur ir arī plānots
+            , ka tavs ārsts varēs apskatīties tavus datus jebkurā dienakts laikā. Tev būs iespēja izprintēt 
+            arī PDF failu kuru varēsi sazīmēt un analizēt savas slimības gaitu kopā ar ārstu. Tiek piedāvāts arī
+            devu kaulkulators kuru varat droši izmantot, ja gadījumā pašam slinkums rēķināt devu ēdienam.
+            <br /><br />
+            Jauku Jums dienu un priecīgu mājaslapas izmantošanu!
           </p>
         </div>
       </section>
