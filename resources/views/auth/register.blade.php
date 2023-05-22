@@ -25,7 +25,7 @@
 
                 <div class="login">
                     <div>
-                      <label for="floatingName" style="margin:10px; color:white;">Lietotājvārds</label>        
+                      <label for="floatingName" style="margin:10px; color:white;">Jūsu vārds</label>        
                     </div>
                     <ul style="color:white; margins:20px;">
                         @if ($errors->has('username'))

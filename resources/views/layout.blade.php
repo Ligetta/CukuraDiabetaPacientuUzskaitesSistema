@@ -44,26 +44,46 @@
             @endguest
 
             @auth
-            {{auth()->user()->name}}
+            @if(auth()->user()->vaiirarsts === 'ja')
+              
             <li>
               <div class="text-end">
-                <a href="{{ route('dienasgramata.index') }}" >Dienasgrāmata</a>
+                <a href="{{ route('arsts.index') }}" >Pacientu dienasgrāmatas</a>
               </div>
-            </li> 
+            </li>
 
             <li>
               <div class="text-end">
-                <a href="{{ route('kaulkulators.index')}}" >Kaulkulators</a>
+                <a href="{{ route('receptes.index') }}" >Receptes</a>
               </div>
             </li> 
-
+            
             <li>
               <div class="text-end">
                 <a href="{{ route('logout.perform') }}" style=" text-decoration: underline;">Izziet</a>
               </div>
-            </li>  
-            @endauth
+            </li>
+            @else
+              <!-- Regular user -->
+              <li>
+                <div class="text-end">
+                  <a href="{{ route('dienasgramata.index') }}" >Dienasgrāmata</a>
+                </div>
+              </li> 
 
+              <li>
+                <div class="text-end">
+                  <a href="{{ route('kal.index') }}" >Kaulkulators</a>
+                </div>
+              </li> 
+
+              <li>
+                <div class="text-end">
+                  <a href="{{ route('logout.perform') }}" style=" text-decoration: underline;">Izziet</a>
+                </div>
+              </li>  
+            @endif
+          @endauth
           </ul>
         </div>
 

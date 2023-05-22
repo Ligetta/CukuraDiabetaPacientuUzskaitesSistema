@@ -11,6 +11,9 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\NoteController;
 use App\Http\Controllers\ExportController;
 use App\Http\Controllers\KaulkulatorsController;
+use App\Http\Controllers\RecepteController;
+use App\Http\Controllers\ArstsController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -77,11 +80,20 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
 Route::group(['middleware' => ['auth']], function() {
     Route::Resource('dienasgramata', NoteController::class);
     Route::delete('/dienasgramata/{id}', 'NoteController@destroy')->name('dienasgramata.destroy');
-    Route::get('/kaulkulators',[KaulkulatorsController::class, 'index'])->name('kaulkulators.index');
+    Route::get('/kaulkulators', [KaulkulatorsController::class, 'index'])->name('kal.index');
+});
+
+Route::group(['middleware' => ['auth']], function() {
+    Route::get('/arsts', [ArstsController::class, 'index'])->name('arsts.index'); 
+    Route::get('/arsts/{id}', [ArstsController::class, 'show'])->name('arsts.show');
+
+    Route::Resource('receptes', RecepteController::class);
+    Route::get('/receptes/{id}/edit', [RecepteController::class, 'edit'])->name('receptes.edit');
 });
 
 //pdf faili pa laikiem- 3, 7, un 30 dienas
 Route::get('/export', [ExportController::class, 'exportToPDF'])->name('pdf.export');
+
 
 
 
