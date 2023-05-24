@@ -63,6 +63,18 @@
                 <a href="{{ route('logout.perform') }}" style=" text-decoration: underline;">Izziet</a>
               </div>
             </li>
+            @elseif(auth()->user()->vaiiradmins === 'ja')
+            <li>
+              <div class="text-end">
+                <a href="{{ route('admin.index') }}">Piešķirt lomas</a>
+              </div>
+            </li>
+
+            <li>
+              <div class="text-end">
+                <a href="{{ route('logout.perform') }}" style=" text-decoration: underline;">Izziet</a>
+              </div>
+            </li>
             @else
               <!-- Regular user -->
               <li>
