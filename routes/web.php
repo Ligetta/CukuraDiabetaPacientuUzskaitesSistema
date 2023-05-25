@@ -14,7 +14,7 @@ use App\Http\Controllers\KaulkulatorsController;
 use App\Http\Controllers\RecepteController;
 use App\Http\Controllers\ArstsController;
 use App\Http\Controllers\RolesController;
-
+use App\Http\Controllers\BlogListController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,11 +32,15 @@ use App\Http\Controllers\RolesController;
 //welcome lapas
 Route::get('/',[WelcomeController::class, 'index'])->name('welcome.index');
 
-//bloga lapa main
-Route::get('/blog',[BlogController::class, 'index'])->name('blog.index');
+//bloga lapas main
+Route::group(['middleware' => ['auth']], function() {
+    Route::resource('blog', BlogController::class);
+    Route::get('/blog/{blogpost}/edit', [BlogController::class, 'edit'])->name('blog.edit');
+    Route::get('/blog/{id}', 'BlogController@show')->name('blog.show');
+});
 
-//atseviska bloga lapa
-Route::get('/blog/single-blog-post',[BlogController::class, 'show'])->name('blog.show');
+//bloga lapas kopejai apskatei
+Route::get('/bloglist', [BlogListController::class, 'index'])->name('bloglist.index');
 
 //about lapa
 Route::get('/about',function(){

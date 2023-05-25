@@ -26,7 +26,7 @@
         <div class="side-links">
           <ul>
             <li><a class="{{Request::routeIs('welcome.index') ? 'active' : ''}}" href="{{route('welcome.index')}}">Sākums</a></li>
-            <li><a class="{{Request::routeIs('blog.index') ? 'active' : ''}}" href="{{route('blog.index')}}">Blogs</a></li>
+            <li><a class="{{Request::routeIs('bloglist.index') ? 'active' : ''}}" href="{{route('bloglist.index')}}">Blogs</a></li>
             <li><a class="{{Request::routeIs('about') ? 'active' : ''}}" href="{{route('about')}}">Par mani</a></li>
             <li><a class="{{Request::routeIs('contact.index') ? 'active' : ''}}" href="{{route('contact.index')}}">Kontakti</a></li>
 
@@ -67,6 +67,12 @@
             <li>
               <div class="text-end">
                 <a href="{{ route('admin.index') }}">Piešķirt lomas</a>
+              </div>
+            </li>
+
+            <li>
+              <div class="text-end">
+                <a href="{{ route('blog.index') }}">Blogu administrēšana</a>
               </div>
             </li>
 
