@@ -44,6 +44,6 @@ class RolesController extends Controller
 
         $user->save();
 
-        return redirect()->route('admin.show', $user->id)->with('success', 'User updated successfully');
+        return redirect()->route('admin.index', $user->id)->with('success', 'User updated successfully');
     }
 }

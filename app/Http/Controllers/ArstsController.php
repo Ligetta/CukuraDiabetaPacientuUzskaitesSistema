@@ -27,6 +27,7 @@ class ArstsController extends Controller
     {
         $user = User::findOrFail($id);
         $notes = $user->notes; // Retrieve the notes associated with the user
+        $username = $user->username; // Get the username
     
         return view('arsts.show', compact('user', 'notes'));
     }
