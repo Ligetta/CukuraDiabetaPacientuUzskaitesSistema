@@ -14,14 +14,14 @@
 @section('main')
     <!-- main -->
     <main class="container">
-        <h2 class="header-title">Latest Blog Posts</h2>
+        <h2 class="header-title">Pēdējie bloga posti</h2>
         <section class="cards-blog latest-blog">
             @foreach($blogposts as $blogpost)
                 <div class="card-blog-content">
                     <img src="{{ asset('images/'.$blogpost->picture) }}" alt="" />
                     <p>
                         {{ $blogpost->created_at->diffForHumans() }}
-                        <span style="float: right">Written By Adina</span>
+                        <span style="float: right">Autors: {{ $blogpost->author }}</span>
                     </p>
                     <h4 style="font-weight: bolder">
                         <a href="{{ route('blog.show', ['id' => $blogpost->id]) }}">{{ $blogpost->title }}</a>
