@@ -15,6 +15,12 @@
         
     }
 
+    .search-form {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+
     .title {
         font-size: 24px;
         font-weight: bold;
@@ -80,10 +86,8 @@
         border-radius: 40px;
         padding: 10px 20px ;
         font-color: black;
-        text-align: center;
-        vertical-align: middle;
-        margin-left: 4vh;
-        margin-bottom: 10px;
+        margin-left: 14vh;
+
     }
 
     .btn-danger {
@@ -91,6 +95,7 @@
         background-color: #dc3545;
         border-color: #dc3545;
         font-size: 16px;
+        margin:4px;
     }
 
     .btn-green {
@@ -99,7 +104,7 @@
         radius:0px;
         background-color: #03C04A;
         border-color: #03C04A;
-        margin-left:3vh;
+        margin-left: -1vh;
     }
 
     .btn-purpl {
@@ -107,6 +112,7 @@
         font-size: 16px;
         background-color: #8ab0e8;
         border-color: #8ab0e8;
+        margin:4px;
     }
 
     .padding{
@@ -118,18 +124,26 @@
         border-radius: 10px;
         radius: 20px;
         padding: 8px;
-        width: 220%;
+        width: 300px;
         font-size: 18px;
         text-align: center;
         vertical-align: middle;
-        margin-left:-10vh;
+        margin-right:10px;
+    }
+
+    .btn-pdf {
+        color: white;
+        font-size: 16px;
+        background-color: #FF0000;
+        border-color: #FF0000;
+        margin:4px;
     }
 </style>
 
 <div class="container2">
     <h1 class="title">Visas izrakstītās receptes</h1>
 
-    <form action="{{ route('receptes.index') }}" method="GET">
+    <form action="{{ route('receptes.index') }}" method="GET" class="search-form">
         <div>
             <ul>
                 <input type="text" name="search" placeholder="Meklēt pēc pacienta vārda" class="form-control" value="{{ request('search') }}">
@@ -145,7 +159,7 @@
     <table class="table">
         <thead>
             <tr>
-                <th>Pacienta vārds</th>
+                <th>Pacienta vārds un uzvārds</th>
                 <th>Zāļu nosaukums</th>
                 <th>Zāļu daudzums</th>
                 <th>Darbības</th>
@@ -158,11 +172,12 @@
                     <td>{{ $recepte->zalnos }}</td>
                     <td>{{ $recepte->zaldaudz }}</td>
                     <td>
-                        <a href="{{ route('receptes.edit', $recepte->id) }}" class="btn btn-purpl">Edit</a>
+                        <a href="{{ route('receptes.edit', $recepte->id) }}" class="btn btn-purpl">Rediģēt</a>
+                        <a class="btn btn-pdf" href="{{ route('receptes.generatePdf', ['id' => $recepte->id]) }}" target="_blank">PDF</a>
                         <form action="{{ route('receptes.destroy', $recepte->id) }}" method="POST">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="btn btn-danger">Delete</button>
+                            <button type="submit" class="btn btn-danger">Dzēst</button>
                         </form>
                     </td>
                 </tr>

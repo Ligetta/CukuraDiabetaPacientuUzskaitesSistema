@@ -111,7 +111,7 @@
 </style>
 
 <div class="container2">
-    <h1 class="title">Cukura dienasgrāmatas ieraksti pacienta: {{$user->username }}</h1>
+    <h1 class="title">Cukura dienasgrāmatas ieraksti pacienta: {{$user->vards_uzvards }}</h1>
     <p class="padding"></p>
     <div class="table-responsive">
         <table class="table">
@@ -131,7 +131,7 @@
                 <tr>
                     <td>{{$note->created_at->addHours(3)}}</td>
                     <td>{{$note->title}}</td>
-                    <td>{{ number_format($note->cuklim, 1) }}</td>
+                    <td>{{ number_format($note->cuklim, 1) }} mmol/l</td>
                     <td>{{ number_format($note->oglhidrati, 1) }}</td>
                     <td>{{$note->insultips}}</td>
                     <td>{{$note->insuldev}}</td>

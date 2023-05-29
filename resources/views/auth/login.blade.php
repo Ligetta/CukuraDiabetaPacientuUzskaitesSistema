@@ -17,7 +17,7 @@
                             <div style="margin:10px; color:white;">
                                 <label for="floatingName">E-pasts vai Lietotājvārds</label>
                             </div>
-                            <input type="text" class="form-control" name="username" value="{{ old('username') }}" placeholder="Username" required="required" autofocus style="border-radius:10px; padding:10px; width:30%">
+                            <input type="text" class="form-control" name="username" value="{{ old('username') }}" placeholder="E-pasts vai Lietotājvārds" required="required" autofocus style="border-radius:10px; padding:10px; width:30%">
                             @if ($errors->has('username'))
                                 <span class="text-danger text-left" class="danger">{{ $errors->first('username') }}</span>
                             @endif
@@ -27,7 +27,7 @@
                             <div style="margin:10px; color:white;">
                                 <label for="floatingPassword">Parole</label>
                             </div>
-                            <input type="password" class="form-control" name="password" value="{{ old('password') }}" placeholder="Password" required="required" style="border-radius:10px; padding:10px; width:30%">
+                            <input type="password" class="form-control" name="password" value="{{ old('password') }}" placeholder="Parole" required="required" style="border-radius:10px; padding:10px; width:30%">
                             @if ($errors->has('password'))
                                 <span class="danger">{{ $errors->first('password') }}</span>
                             @endif

@@ -95,6 +95,7 @@ Route::group(['middleware' => ['auth']], function() {
 
     Route::Resource('receptes', RecepteController::class);
     Route::get('/receptes/{id}/edit', [RecepteController::class, 'edit'])->name('receptes.edit');
+    Route::get('/receptes/{id}/generate-pdf', [RecepteController::class, 'generatePdf'])->name('receptes.generatePdf');
 });
 
 //pdf faili pa laikiem- 3, 7, un 30 dienas

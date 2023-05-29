@@ -4,14 +4,15 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="{{asset('css/style.css')}}" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-    />
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
     <title>Cukura Dienasgrāmatas PDF fails</title>
     <style>
-  
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0fff0;
+        }
+
         .logo {
             text-align: center;
             margin-bottom: 20px;
@@ -23,7 +24,7 @@
 
         .table-container {
             margin-bottom: 20px;
-            font-family: 'Times New Roman', Times, serif !important;
+            font-family: Arial, sans-serif;
         }
 
         table {
@@ -35,6 +36,11 @@
             padding: 8px;
             text-align: left;
             border-bottom: 1px solid #ddd;
+        }
+
+        .timestamp {
+            margin-top: 20px;
+            text-align: right;
         }
     </style>
 </head>
@@ -58,17 +64,18 @@
             <tbody>
                 @foreach ($notes as $note)
                 <tr>
-                    <td>{{$note->created_at}}</td>
-                    <td>{{$note->title}}</td>
+                    <td>{{ $note->created_at }}</td>
+                    <td>{{ $note->title }}</td>
                     <td>{{ number_format($note->cuklim, 1) }}</td>
                     <td>{{ number_format($note->oglhidrati, 1) }}</td>
-                    <td>{{$note->insultips}}</td>
-                    <td>{{$note->insuldev}}</td>
-                    <td>{{$note->kordev}}</td>
+                    <td>{{ $note->insultips }}</td>
+                    <td>{{ $note->insuldev }}</td>
+                    <td>{{ $note->kordev }}</td>
                 </tr>
                 @endforeach
             </tbody>
+        </table>
     </div>
-    <p>PDF izveidots: {{ date('Y-m-d H:i:s') }}</p>
+    <p class="timestamp">PDF izveidots: {{ date('Y-m-d H:i:s') }}</p>
 </body>
 </html>

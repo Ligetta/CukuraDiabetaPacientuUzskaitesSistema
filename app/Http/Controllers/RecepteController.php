@@ -4,10 +4,16 @@ namespace App\Http\Controllers;
 
 use App\Models\Recepte;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Carbon\Carbon;
+use Dompdf\Dompdf;
+use Illuminate\Support\Facades\View;
+
+
 
 class RecepteController extends Controller
 {
-    // Show all receptes
+
     public function index(Request $request)
     {
         $searchTerm = $request->query('search');
@@ -19,13 +25,11 @@ class RecepteController extends Controller
         return view('receptes.index', compact('receptes'));
     }
 
-    // Show the create form
     public function create()
     {
         return view('receptes.create');
     }
 
-    // Store a new recepte
     public function store(Request $request)
     {
         $validatedData = $request->validate([
@@ -74,11 +78,30 @@ class RecepteController extends Controller
         return redirect()->route('receptes.index')->with('success', 'Recepte atjaunota veiksmīgi.');
     }
 
-    // Delete a recepte
     public function destroy(Recepte $recepte)
     {
         $recepte->delete();
 
         return redirect()->route('receptes.index')->with('success', 'Recepte izdzēsta veiksmīgi.');
     }
+
+    public function generatePdf($id)
+    {
+        $recepte = Recepte::findOrFail($id);
+    
+        $data = [
+            'recepte' => $recepte,
+            'currentUserName' => auth()->user()->vards_uzvards,
+        ];
+    
+        $html = view('receptes.generatePdf', $data)->render();
+        $dompdf = new Dompdf();
+        $dompdf->loadHtml($html);
+    
+        $dompdf->render();
+    
+        return $dompdf->stream('Recepte-' . $recepte->id . '.pdf');
+    }
+    
+
 }

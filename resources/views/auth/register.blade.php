@@ -20,21 +20,33 @@
                             <span class="text-danger text-left" >{{ $errors->first('email') }}</span>
                         @endif 
                     </ul>                   
-                    <input type="email" class="form-control" name="email" value="{{ old('email') }}" placeholder="name@example.com" required="required" autofocus style="border-radius:10px; padding:10px; width:30%; margin:10px;">
+                    <input type="email" class="form-control" name="email" value="{{ old('email') }}" placeholder="vards@example.com" required="required" autofocus style="border-radius:10px; padding:10px; width:30%; margin:10px;">
                 </div>
 
                 <div class="login">
                     <div>
-                      <label for="floatingName" style="margin:10px; color:white;">Jūsu vārds</label>        
+                      <label for="floatingName" style="margin:10px; color:white;">Jūsu lietotājvārds</label>        
                     </div>
                     <ul style="color:white; margins:20px;">
                         @if ($errors->has('username'))
                             <span class="text-danger text-left">{{ $errors->first('username') }}</span>
                         @endif
                     </ul>
-                    <input type="text" class="form-control" name="username" value="{{ old('username') }}" placeholder="Username" required="required" autofocus style="border-radius:10px; padding:10px; width:30%; margin:10px;">
+                    <input type="text" class="form-control" name="username" value="{{ old('username') }}" placeholder="Lietotājvārds" required="required" autofocus style="border-radius:10px; padding:10px; width:30%; margin:10px;">
                 </div>
-                
+
+                <div class="login">
+                    <div>
+                        <label for="floatingVardsUzvards" style="margin:10px; color:white;">Vārds un uzvārds</label>
+                    </div>
+                    <ul style="color:white; margins:20px;">
+                        @if ($errors->has('vards_uzvards'))
+                            <span class="text-danger text-left">{{ $errors->first('vards_uzvards') }}</span>
+                        @endif
+                    </ul>
+                    <input type="text" class="form-control" name="vards_uzvards" value="{{ old('vards_uzvards') }}" placeholder="Vārds un uzvārds" required="required" autofocus style="border-radius:10px; padding:10px; width:30%; margin:10px;">
+                </div>
+
                 <div class="login">
                     
                     <div>
@@ -47,7 +59,7 @@
                         @endif
                     </ul>
 
-                    <input type="password" class="form-control" name="password" value="{{ old('password') }}" placeholder="Password" required="required" style="border-radius:10px; padding:10px; width:30%; margin:10px;">
+                    <input type="password" class="form-control" name="password" value="{{ old('password') }}" placeholder="Parole" required="required" style="border-radius:10px; padding:10px; width:30%; margin:10px;">
 
                 </div>
 
@@ -62,7 +74,7 @@
                         @endif
                     </ul>
 
-                    <input type="password" class="form-control" name="password_confirmation" value="{{ old('password_confirmation') }}" placeholder="Confirm Password" required="required" style="border-radius:10px; padding:10px; width:30%; margin:10px;">
+                    <input type="password" class="form-control" name="password_confirmation" value="{{ old('password_confirmation') }}" placeholder="Parole atkārtoti" required="required" style="border-radius:10px; padding:10px; width:30%; margin:10px;">
                 </div>
                 
                 <button class="register-button" style="border-radius:10px; padding:10px; margin:10px; width:15%; margin-left:38vh;" type="submit">Reģistrēties</button>

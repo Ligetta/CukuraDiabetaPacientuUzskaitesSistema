@@ -114,14 +114,14 @@
     <table class="table">
         <thead>
             <tr>
-                <th>Pacienta vārds</th>
+                <th>Pacienta vārds un uzvārds</th>
             </tr>
         </thead>
         <tbody>
             @foreach ($users as $user)
                 @if ($user->vaiirarsts !== 'ja' && $user->vaiiradmins !== 'ja')
                     <tr>
-                        <td><a  style="color:#444444;" href="{{ route('arsts.show', $user->id) }}">{{ $user->username }}</a></td>
+                        <td><a  style="color:#444444;" href="{{ route('arsts.show', $user->id) }}">{{ $user->vards_uzvards }}</a></td>
                     </tr>
                 @endif
             @endforeach

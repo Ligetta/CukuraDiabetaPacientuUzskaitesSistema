@@ -140,7 +140,7 @@
                 <tr>
                     <td>{{$note->created_at->addHours(3)}}</td>
                     <td>{{$note->title}}</td>
-                    <td>{{ number_format($note->cuklim, 1) }}</td>
+                    <td>{{ number_format($note->cuklim, 1) }} mmol/l</td>
                     <td>{{ number_format($note->oglhidrati, 1) }}</td>
                     <td>{{$note->insultips}}</td>
                     <td>{{$note->insuldev}}</td>

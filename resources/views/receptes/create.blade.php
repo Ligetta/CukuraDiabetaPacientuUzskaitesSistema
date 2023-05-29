@@ -54,7 +54,7 @@
 </style>
 
 <div class="container2">
-    <h1 style="color:black;">Izveidojiet jaunu recepti</h1>
+    <h1 style="color:black;">Izveidojiet jaunu recepti!</h1>
 
     @if ($errors->any())
         <div>
@@ -69,7 +69,7 @@
     <form action="{{ route('receptes.store') }}" method="POST">
         @csrf
         <div class="form-group  mt-4">
-            <label for="pacvards">Pacienta vārds:</label>
+            <label for="pacvards">Pacienta vārds un uzvārds:</label>
             <input class="form-control" type="text" name="pacvards" id="pacvards" value="{{ old('pacvards') }}">
         </div>
 
