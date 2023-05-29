@@ -8,7 +8,7 @@
 
             <p class="time-and-author">
                 {{ $blogpost->created_at->diffForHumans() }}
-                <span>Written By {{ $blogpost->author }}</span>
+                <span>Autors: Adīna</span>
             </p>
 
             <div class="single-blog-post-ContentImage" data-aos="fade-left">

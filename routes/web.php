@@ -32,15 +32,22 @@ use App\Http\Controllers\BlogListController;
 //welcome lapas
 Route::get('/',[WelcomeController::class, 'index'])->name('welcome.index');
 
+Route::get('/blog/{id}', [BlogController::class, 'show'])->name('blog.show');
+
 //bloga lapas main
 Route::group(['middleware' => ['auth']], function() {
-    Route::resource('blog', BlogController::class);
-    Route::get('/blog/{blogpost}/edit', [BlogController::class, 'edit'])->name('blog.edit');
-    Route::get('/blog/{id}', 'BlogController@show')->name('blog.show');
+    Route::get('/blog', [BlogController::class, 'index'])->name('blog.index');
+    Route::get('/blog/create', [BlogController::class, 'create'])->name('blog.create');
+    Route::post('/blog', [BlogController::class, 'store'])->name('blog.store');
+    Route::get('/blog/{id}/edit', [BlogController::class, 'edit'])->name('blog.edit');
+    Route::put('/blog/{blogpost}', [BlogController::class, 'update'])->name('blog.update');
+    Route::delete('/blog/{blogpost}', [BlogController::class, 'destroy'])->name('blog.destroy');
+
 });
 
 //bloga lapas kopejai apskatei
-Route::get('/bloglist', [BlogListController::class, 'index'])->name('bloglist.index');
+Route::get('/bloglist', [BlogListController::class, 'index'])->name('bloglist.index');    
+
 
 //about lapa
 Route::get('/about',function(){

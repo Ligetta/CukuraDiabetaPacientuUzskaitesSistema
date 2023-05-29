@@ -21,10 +21,10 @@
                     <img src="{{ asset('images/'.$blogpost->picture) }}" alt="" />
                     <p>
                         {{ $blogpost->created_at->diffForHumans() }}
-                        <span style="float: right">Autors: {{ $blogpost->author }}</span>
+                        <span style="float: right">Autors: Adīna</span>
                     </p>
                     <h4 style="font-weight: bolder">
-                        <a href="{{ route('blog.show', ['id' => $blogpost->id]) }}">{{ $blogpost->title }}</a>
+                       <a href="{{ route('blog.show', ['id' => $blogpost->id]) }}">{{ $blogpost->title }}</a>
                     </h4>
                 </div>
             @endforeach

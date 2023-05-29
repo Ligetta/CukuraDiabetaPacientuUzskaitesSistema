@@ -134,13 +134,13 @@
             @foreach($blogposts as $blogpost)
                 <tr>
                     <td>{{ $blogpost->title }}</td>
-                    <td>{{ $blogpost->content }}</td>
+                    <td>{{ Str::limit($blogpost->content, 20) }}</td>
                     <td>
                         <a href="{{ route('blog.edit', $blogpost->id) }}" class="btn btn-primary">Rediģēt</a>
                         <form action="{{ route('blog.destroy', $blogpost->id) }}" method="POST" style="display: inline">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this post?')">Dzēst</button>
+                            <button type="submit" class="btn btn-danger" onclick="return confirm('Vai vēlaties izdzēst?')">Dzēst</button>
                         </form>
                     </td>
                 </tr>

@@ -52,7 +52,7 @@
 
 </style>
 <div class="container2">
-    <h2>Edit Blog Post</h2>
+    <h2>Rediģēt bloga ierakstu</h2>
 
     @if($errors->any())
         <div class="alert alert-danger">
@@ -68,11 +68,11 @@
         @csrf
         @method('PUT')
         <div class="form-group">
-            <label for="title">Title</label>
+            <label for="title">Virsraksts</label>
             <input type="text" name="title" class="form-control" value="{{ $blogpost->title }}" required>
         </div>
         <div class="form-group">
-            <label for="content">Content</label>
+            <label for="content">Saturs</label>
             <textarea name="content" class="form-control" rows="4" required>{{ $blogpost->content }}</textarea>
         </div>
         <button type="submit" class="btn btn-primary">Update</button>

@@ -28,7 +28,7 @@ class BlogController extends Controller
 
         Blogpost::create($validatedData);
 
-        return redirect()->route('blog.index')->with('success', 'Blog post created successfully.');
+        return redirect()->route('blog.index');
     }
 
     public function show($id)
@@ -64,13 +64,13 @@ class BlogController extends Controller
 
         $blogpost->update($validatedData);
 
-        return redirect()->route('blog.index')->with('success', 'Blog post updated successfully.');
+        return redirect()->route('blog.index');
     }
 
     public function destroy(Blogpost $blogpost)
     {
         $blogpost->delete();
 
-        return redirect()->route('blog.index')->with('success', 'Blog post deleted successfully.');
+        return redirect()->route('blog.index');
     }
 }
