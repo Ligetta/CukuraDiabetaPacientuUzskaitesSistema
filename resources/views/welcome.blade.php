@@ -24,7 +24,7 @@
                         <span style="float: right">Autors: Adīna</span>
                     </p>
                     <h4 style="font-weight: bolder">
-                       <a href="{{ route('blog.show', ['id' => $blogpost->id]) }}">{{ $blogpost->title }}</a>
+                       <a href="{{ route('show-blog', ['id' => $blogpost->id]) }}">{{ $blogpost->title }}</a>
                     </h4>
                 </div>
             @endforeach

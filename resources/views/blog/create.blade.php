@@ -75,7 +75,7 @@
             <label for="content">Saturs</label>
             <textarea name="content" class="form-control" rows="4" required></textarea>
         </div>
-        <button type="submit" class="btn btn-primary">Create</button>
+        <button type="submit" class="btn btn-primary">Izveidot</button>
     </form>
 </div>
 @endsection

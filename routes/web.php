@@ -15,6 +15,7 @@ use App\Http\Controllers\RecepteController;
 use App\Http\Controllers\ArstsController;
 use App\Http\Controllers\RolesController;
 use App\Http\Controllers\BlogListController;
+use App\Http\Controllers\ShowBlogController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,13 +33,14 @@ use App\Http\Controllers\BlogListController;
 //welcome lapas
 Route::get('/',[WelcomeController::class, 'index'])->name('welcome.index');
 
-Route::get('/blog/{id}', [BlogController::class, 'show'])->name('blog.show');
+Route::get('/show-blog/{id}', [ShowBlogController::class, 'show'])->name('show-blog');
 
 //bloga lapas main
 Route::group(['middleware' => ['auth']], function() {
     Route::get('/blog', [BlogController::class, 'index'])->name('blog.index');
     Route::get('/blog/create', [BlogController::class, 'create'])->name('blog.create');
     Route::post('/blog', [BlogController::class, 'store'])->name('blog.store');
+    Route::get('/blog/{id}', [BlogController::class, 'show'])->name('blog.show');
     Route::get('/blog/{id}/edit', [BlogController::class, 'edit'])->name('blog.edit');
     Route::put('/blog/{blogpost}', [BlogController::class, 'update'])->name('blog.update');
     Route::delete('/blog/{blogpost}', [BlogController::class, 'destroy'])->name('blog.destroy');
