@@ -1,4 +1,4 @@
-# Projekta nosaukums: Diabēta Pacientu Uzskaites sistēma
+# Projekta nosaukums: Cukura Diabēta Pacientu Uzskaites sistēma
 
 ## Par mani un nedaudz par manu projektu
 
