@@ -36,13 +36,13 @@ class BlogController extends Controller
         $blogpost = Blogpost::find($id);
     
         if (!$blogpost) {
-            // Handle the case when the blog post is not found
+            
         }
         
-        $pictures = ['pic1.jpg', 'pic2.jpg', 'pic3.jpg', 'pic4.jpg', 'pic5.jpg']; // Array of picture names
+        $pictures = ['pic1.jpg', 'pic2.jpg', 'pic3.jpg', 'pic4.jpg', 'pic5.jpg'];
         
-        $picture = Arr::random($pictures); // Randomly select a picture
-        $blogpost->picture = $picture; // Add the picture property to the blog post
+        $picture = Arr::random($pictures);
+        $blogpost->picture = $picture;
     
         return view('blog.show', compact('blogpost'));
     }

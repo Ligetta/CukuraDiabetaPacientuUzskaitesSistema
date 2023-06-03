@@ -22,7 +22,7 @@ class NoteController extends Controller
         $user = Auth::user();
 
         $validated = $request->validated();
-        $validated['user_id'] = $user->id; // Assign the authenticated user's ID as the foreign key
+        $validated['user_id'] = $user->id; 
 
         Note::create($validated);
 
@@ -103,10 +103,10 @@ class NoteController extends Controller
      */
     public function destroy($id)
     {
-        $note = Note::find($id); // Find the note by its ID
+        $note = Note::find($id);
 
         if ($note) {
-            $note->delete(); // Delete the note
+            $note->delete(); 
 
             return redirect()->route('dienasgramata.index')->with('success', 'Note deleted successfully');
         }

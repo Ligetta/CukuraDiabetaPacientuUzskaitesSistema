@@ -17,11 +17,11 @@ class BlogListController extends Controller
             return $query->where('title', 'like', '%'.$search.'%');
         })->get();
     
-        $pictures = ['pic1.jpg', 'pic2.jpg', 'pic3.jpg', 'pic4.jpg', 'pic5.jpg']; // Array of picture names
-    
+        $pictures = ['pic1.jpg', 'pic2.jpg', 'pic3.jpg', 'pic4.jpg', 'pic5.jpg']; 
+
         $blogposts = $blogposts->map(function ($blogpost) use ($pictures) {
-            $picture = Arr::random($pictures); // Randomly select a picture
-            $blogpost->picture = $picture; // Add the picture property to the blog post
+            $picture = Arr::random($pictures);
+            $blogpost->picture = $picture;
             return $blogpost;
         });
     

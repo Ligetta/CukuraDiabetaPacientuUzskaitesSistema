@@ -28,10 +28,9 @@ class RolesController extends Controller
 
     public function show(User $user)
     {
-        // Retrieve the user details from the database
+
         $user = User::find($user->id);
 
-        // Pass the user data to the view
         return view('admin.show', compact('user'));
     }
 
